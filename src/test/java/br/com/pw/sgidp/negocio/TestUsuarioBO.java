@@ -21,7 +21,7 @@ public class TestUsuarioBO {
 		
 		usuarioBO.inserir(usuario);
 		
-		usuarioBO.buscaUsuarioPorId(new Long(1));
+		usuarioBO.obterPorId(new Long(1));
 		
 	}
 }

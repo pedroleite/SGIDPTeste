@@ -4,10 +4,22 @@ import br.com.pw.sgidp.negocio.entidade.Usuario;
 import br.com.pw.sgidp.persitencia.dao.UsuarioDAO;
 
 public class UsuarioBO {
+	private UsuarioDAO usuarioDAO;
+
+	public UsuarioDAO getUsuarioDAO() {
+		if (usuarioDAO == null) {
+			usuarioDAO = new UsuarioDAO();
+
+		}
+
+		return usuarioDAO;
+	}
+
 	private Usuario usuarioLogado;
+
 	public boolean isLoginESenhaValidos(Usuario usuario) {
-		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		usuarioLogado = usuarioDAO.buscaUsuarioPorLoginESenha(usuario);
+
+		usuarioLogado = getUsuarioDAO().buscaUsuarioPorLoginESenha(usuario);
 		if (usuarioLogado != null) {
 			return true;
 		} else if (isUsuarioPadrao(usuario)) {
@@ -31,14 +43,12 @@ public class UsuarioBO {
 	}
 
 	public void inserir(Usuario usuario) {
-		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		usuarioDAO.iniciarTransacao();
-		usuarioDAO.inserir(usuario);
-		usuarioDAO.finalizarTransacao();
+		getUsuarioDAO().iniciarTransacao();
+		getUsuarioDAO().inserir(usuario);
+		getUsuarioDAO().finalizarTransacao();
 	}
 
-	public void buscaUsuarioPorId(Long long1) {
-		// TODO Auto-generated method stub
-		
+	public Usuario obterPorId(Long id) {
+		return getUsuarioDAO().obterPorId(id);
 	}
 }

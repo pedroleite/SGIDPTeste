@@ -30,6 +30,9 @@ public class TestUsuarioDAO {
 		getUsuarioDAO().iniciarTransacao();
 		getUsuarioDAO().inserir(usuario);
 		getUsuarioDAO().finalizarTransacao();
+		Long id = new Long(1);
+		Usuario usuarioAdicionado = getUsuarioDAO().obterPorId(id);
+		Assert.assertEquals(id, usuarioAdicionado.getId());
 	}
 	
 	@Test
