@@ -1,5 +1,7 @@
 package br.com.pw.sgidp.persistencia;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 import br.com.pw.sgidp.negocio.entidade.Usuario;
@@ -20,13 +22,14 @@ public class TestUsuarioDAO {
 	
 	@Test
 	public void testCriarUsuario() throws Exception {
-//		Usuario usuario = new Usuario();
-//		usuario.setNome("Welington Antonio Gomides");
-//		usuario.setLogin("welington");
-//		usuario.setSenha("123");
-//		getUsuarioDAO().iniciarTransacao();
-//		getUsuarioDAO().inserir(usuario);
-//		getUsuarioDAO().finalizarTransacao();
+		Usuario usuario = new Usuario();
+		usuario.setNome("Welington Antonio Gomides");
+		usuario.setLogin("welington");
+		usuario.setSenha("123");
+		usuario.setPermissao("cadastrarUsuario");
+		getUsuarioDAO().iniciarTransacao();
+		getUsuarioDAO().inserir(usuario);
+		getUsuarioDAO().finalizarTransacao();
 	}
 	
 	@Test
@@ -38,6 +41,8 @@ public class TestUsuarioDAO {
 		getUsuarioDAO().buscaUsuarioPorLoginESenha(usuario);
 		
 	}
+	
+
 }
 
 

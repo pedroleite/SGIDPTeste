@@ -71,16 +71,27 @@
 		<div region="west" split="true" title="Menu" style="width:200px;padding1:1px;overflow:hidden;">
 			<div class="easyui-accordion" fit="true" border="false">
 				<div title="Title1" style="overflow:auto;">
- 			<ul>
-          		<ol><a href="#" wicket:id="homeLink">Home</a></ol>
-          		<ol><a href="#" wicket:id="servicesLink">Services</a></ol>
-         		<ol><a href="#" wicket:id="aboutUsLink">About Us</a></ol>
-         		<ol><a href="#" wicket:id="contactLink">Contact</a></ol>
-         	</ul>
+		 			<ul>
+		          		<ol><a href="#" wicket:id="homeLink">Home</a></ol>
+		          		<ol><a href="#" wicket:id="servicesLink">Services</a></ol>
+		         		<ol><a href="#" wicket:id="aboutUsLink">About Us</a></ol>
+		         		<ol><a href="#" wicket:id="contactLink">Contact</a></ol>
+		         	</ul>
 				</div>
-				<div title="Title2" selected="true" style="padding:10px;">
-					content2
-					<a href="#" onclick="addmenu()">addmenu</a>
+				
+				<div title="Title2"  wicket:id="div1" selected="true" style="padding: 10px;">
+					<ul>
+						<ol>
+							<a href="#" wicket:id="homeLink2">Home</a>
+						</ol>
+					</ul>
+				</div>
+				<div title="Title2"  wicket:id="div2" selected="false" style="padding: 10px;">
+					<ul>
+						<ol>
+							<a href="#" wicket:id="homeLink2">Home</a>
+						</ol>
+					</ul>
 				</div>
 				<div title="Title3">
 					content3

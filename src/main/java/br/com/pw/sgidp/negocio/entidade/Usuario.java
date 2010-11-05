@@ -9,10 +9,20 @@ import javax.persistence.Table;
 @Table(name = "USUARIO")
 public class Usuario extends Entidade implements Serializable {
 
+	
 	private static final long serialVersionUID = -419262247568265877L;
 	private String nome;
 	private String login;
 	private String senha;
+	
+	private String permissao;
+	
+	public String getPermissao() {
+		return permissao;
+	}
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -31,4 +41,6 @@ public class Usuario extends Entidade implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	
 }

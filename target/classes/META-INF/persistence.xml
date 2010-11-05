@@ -11,11 +11,11 @@
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="hibernate.connection.username" value="root" />
-			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.connection.password" value="root" />
 			<property name="hibernate.connection.driver_class" value="org.gjt.mm.mysql.Driver" />
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sgidp" />
 			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
-			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>

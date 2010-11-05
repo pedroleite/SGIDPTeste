@@ -29,4 +29,16 @@ public class UsuarioBO {
 	public Usuario getUsuarioLogado() {
 		return usuarioLogado;
 	}
+
+	public void inserir(Usuario usuario) {
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarioDAO.iniciarTransacao();
+		usuarioDAO.inserir(usuario);
+		usuarioDAO.finalizarTransacao();
+	}
+
+	public void buscaUsuarioPorId(Long long1) {
+		// TODO Auto-generated method stub
+		
+	}
 }
