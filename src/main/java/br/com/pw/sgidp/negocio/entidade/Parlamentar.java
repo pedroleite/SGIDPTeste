@@ -19,6 +19,7 @@ public class Parlamentar extends Entidade implements Serializable {
 	private String nomeParlamentar;
 	private String estado;
 
+	@OneToMany(cascade = CascadeType.ALL, targetEntity = Endereco.class, fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
 
 	@Column(name = "NOMEPARLAMENTAR")
@@ -43,7 +44,6 @@ public class Parlamentar extends Entidade implements Serializable {
 		this.enderecos = enderecos;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, targetEntity = Endereco.class, fetch = FetchType.EAGER)
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
