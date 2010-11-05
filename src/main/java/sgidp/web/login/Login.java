@@ -8,9 +8,6 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 
 import sgidp.web.home.Home;
-import sgidp.web.parlamentar.CadastroClienteRespostaPage;
-import sgidp.web.parlamentar.CadastroParlamentarPage;
-
 import br.com.pw.sgidp.negocio.UsuarioBO;
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 

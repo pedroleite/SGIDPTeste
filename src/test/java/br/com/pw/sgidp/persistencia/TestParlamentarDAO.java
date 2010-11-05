@@ -25,19 +25,9 @@ public class TestParlamentarDAO {
 
 		Parlamentar parlamentar = new Parlamentar();
 
-		parlamentar.setNome("Pedro");
-
-		parlamentar.setTratamento("");
-		parlamentar.setNomeCompleto("");
-		parlamentar.setDataNascimento("");
-		parlamentar.setCargo("");
-		parlamentar.setPartido("");
 		parlamentar.setEstado("");
-		parlamentar.setProfissao("");
-		parlamentar.setEmail("");
-		parlamentar.setEmailParticular("");
-		parlamentar.setEscolaridade("");
-		parlamentar.setSite("");
+
+		parlamentar.setEstado("");
 
 		getParlamentarDAO().iniciarTransacao();
 		getParlamentarDAO().inserir(parlamentar);
@@ -46,7 +36,7 @@ public class TestParlamentarDAO {
 		Long id = new Long(1);
 		Parlamentar parlamentarInserido = getParlamentarDAO().obterPorId(id);
 
-		Assert.assertEquals("Pedro", parlamentarInserido.getNome());
+		Assert.assertEquals("Pedro", parlamentarInserido.getNomeParlamentar());
 
 	}
 }
