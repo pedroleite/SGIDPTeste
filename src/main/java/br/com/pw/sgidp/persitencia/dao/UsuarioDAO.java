@@ -11,12 +11,10 @@ public class UsuarioDAO extends DAOAbstrato<Usuario> {
 
 	public void inserir(Usuario entidade) {
 		getSession().persist(entidade);
-
 	}
 
 	public void atualizar(Usuario entidade) {
 		getSession().persist(entidade);
-
 	}
 
 	public void excluir(Usuario entidade) {
@@ -24,7 +22,6 @@ public class UsuarioDAO extends DAOAbstrato<Usuario> {
 	}
 
 	public Usuario obterPorId(Long id) {
-
 		return getSession().find(Usuario.class, id);
 	}
 
