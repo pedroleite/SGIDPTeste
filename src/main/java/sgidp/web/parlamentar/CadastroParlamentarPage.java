@@ -3,17 +3,17 @@ package sgidp.web.parlamentar;
 import java.util.Arrays;
 
 import org.apache.wicket.PageParameters;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 
+import sgidp.web.template.WebSite;
 import br.com.pw.sgidp.negocio.ParlamentarBO;
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 
-public class CadastroParlamentarPage extends WebPage {
+public class CadastroParlamentarPage extends WebSite {
 
 	final long serialVersionUID = 1L;
 	Parlamentar cadastroParlamentar = new Parlamentar();
@@ -21,6 +21,11 @@ public class CadastroParlamentarPage extends WebPage {
 
 	@SuppressWarnings( { "serial", "unchecked" })
 	public CadastroParlamentarPage(final PageParameters parameters) {
+		super(parameters);
+
+		setPagina("Cadastro Parlamentar");
+
+		setModulo("Parlamentar");
 
 		Form<Object> form = new Form<Object>("form");
 		add(form);
