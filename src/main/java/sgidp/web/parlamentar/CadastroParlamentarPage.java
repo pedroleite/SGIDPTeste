@@ -9,17 +9,19 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 
+import sgidp.web.template.WebSite;
+
 import br.com.pw.sgidp.negocio.ParlamentarBO;
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 
-public class CadastroParlamentarPage extends WebPage {
+public class CadastroParlamentarPage extends WebSite {
 
 	final long serialVersionUID = 1L;
 	Parlamentar cadastroParlamentar = new Parlamentar();
 
 	@SuppressWarnings("serial")
 	public CadastroParlamentarPage(final PageParameters parameters) {
-
+		super(parameters);
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 

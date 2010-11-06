@@ -33,6 +33,8 @@ public class Login extends WebPage {
 			@Override
 			public void onSubmit() {
 
+				MockCarregarUsuarioEPermissoes.criarUsuarioEPermissoes();
+
 				UsuarioBO usuarioBO = new UsuarioBO();
 
 				if (usuarioBO.isLoginESenhaValidos(getUsuario())) {

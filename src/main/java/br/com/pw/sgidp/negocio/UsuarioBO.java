@@ -1,12 +1,14 @@
 package br.com.pw.sgidp.negocio;
 
+import java.util.Collection;
+
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 import br.com.pw.sgidp.persitencia.dao.UsuarioDAO;
 
 public class UsuarioBO {
 	private UsuarioDAO usuarioDAO;
 
-	public UsuarioDAO getUsuarioDAO() {
+	private UsuarioDAO getUsuarioDAO() {
 		if (usuarioDAO == null) {
 			usuarioDAO = new UsuarioDAO();
 
@@ -50,5 +52,10 @@ public class UsuarioBO {
 
 	public Usuario obterPorId(Long id) {
 		return getUsuarioDAO().obterPorId(id);
+	}
+	
+
+	public Collection<Usuario> getTodosUsuarios() {
+		return getUsuarioDAO().consultarTodos();
 	}
 }

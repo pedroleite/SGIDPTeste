@@ -33,6 +33,15 @@
 			<artifactId>wicket</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
+	
+          <dependency>
+               <groupId>org.apache.wicket</groupId>
+               <artifactId>wicket-extensions</artifactId>
+               <version>${wicket.version}</version>
+          </dependency>
+ 
+		
+		
 		<dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>

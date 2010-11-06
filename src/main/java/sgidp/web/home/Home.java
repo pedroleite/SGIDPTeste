@@ -1,10 +1,16 @@
 package sgidp.web.home;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.PageParameters;
 
-public class Home extends WebPage {
-	public Home() {
-		// TODO Auto-generated constructor stub
+import sgidp.web.template.WebSite;
+
+
+public class Home extends WebSite {
+
+	public Home(final PageParameters parameters) {
+		super(parameters);
+		setModulo("Home");
+		setPagina("Seja bem vindo!");
 	}
 
 }
