@@ -1,10 +1,11 @@
 package sgidp.web.parlamentar;
 
-import java.util.Date;
+import java.util.Arrays;
 
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
+import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
@@ -16,40 +17,23 @@ public class CadastroParlamentarPage extends WebPage {
 
 	final long serialVersionUID = 1L;
 	Parlamentar cadastroParlamentar = new Parlamentar();
+	private DropDownChoice DropDownChoice;
 
-	@SuppressWarnings("serial")
+	@SuppressWarnings( { "serial", "unchecked" })
 	public CadastroParlamentarPage(final PageParameters parameters) {
 
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 
-		form.add(new TextField<String>("nome", new PropertyModel<String>(this,
-				"cadastroParlamentar.nome")));
-		form.add(new TextField<String>("tratamento", new PropertyModel<String>(
-				this, "cadastroParlamentar.tratamento")));
-		form.add(new TextField<String>("nomeCompleto",
-				new PropertyModel<String>(this,
-						"cadastroParlamentar.nomeCompleto")));
-		form.add(new TextField<Date>("dataNascimento", new PropertyModel<Date>(
-				this, "cadastroParlamentar.dataNascimento")));
-		form.add(new TextField<String>("cargo", new PropertyModel<String>(this,
-				"cadastroParlamentar.cargo")));
-		form.add(new TextField<String>("partido", new PropertyModel<String>(
-				this, "cadastroParlamentar.partido")));
+		form
+				.add(new TextField<String>("nomeParlamentar",
+						new PropertyModel<String>(this,
+								"Parlamentar.nomeParlamentar")));
 		form.add(new TextField<String>("estado", new PropertyModel<String>(
-				this, "cadastroParlamentar.estado")));
-		form.add(new TextField<String>("profissao", new PropertyModel<String>(
-				this, "cadastroParlamentar.profissao")));
-		form.add(new TextField<String>("email", new PropertyModel<String>(this,
-				"cadastroParlamentar.email")));
-		form.add(new TextField<String>("escolaridade",
-				new PropertyModel<String>(this,
-						"cadastroParlamentar.escolaridade")));
-		form.add(new TextField<String>("emailParticular",
-				new PropertyModel<String>(this,
-						"cadastroParlamentar.emailParticular")));
-		form.add(new TextField<String>("site", new PropertyModel<String>(this,
-				"cadastroParlamentar.site")));
+				this, "Parlamentar.estado")));
+
+		DropDownChoice estado = new DropDownChoice("estado", Arrays
+				.asList(new String[] { "BA", "DF", "GO" }));
 
 		form.add(new Button("btnConfirmar") {
 			@Override
@@ -62,5 +46,4 @@ public class CadastroParlamentarPage extends WebPage {
 		form.add(new Button("btnCancelar"));
 
 	}
-
 }

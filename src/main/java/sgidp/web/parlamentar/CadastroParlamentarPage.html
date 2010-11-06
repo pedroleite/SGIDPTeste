@@ -1,67 +1,26 @@
 <html
 	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
 <head>
-<title>Cadastro do Cliente</title>
+<title>Cadastro de Parlamentar</title>
 </head>
 <body>
 <form method="post" wicket:id="form">
 <table cellpadding="0" cellspacing="0">
 	<tr>
 		<td>Nome Parlamentar</td>
-		<td><input size="40" wicket:id="nome" tabindex="1"
+		<td><input size="40" wicket:id="nomeParlamentar" tabindex="1"
 			title="Entre com o seu nome" /></td>
 	</tr>
 	<tr>
-		<td>Tratamento</td>
-		<td><input size="40" wicket:id="tratamento" tabindex="1"
-			title="Tratamento" /></td>
-	</tr>
-	<tr>
-		<td>Nome completo</td>
-		<td><input size="40" wicket:id="nomeCompleto" tabindex="1"
-			title="nomeCompleto" /></td>
-	</tr>
-	<tr>
-		<td>Data Nasc.</td>
-		<td><input size="40" wicket:id="dataNascimento" tabindex="1"
-			title="dataNascimento" /></td>
-	</tr>
-	<tr>
-		<td>Cargo</td>
-		<td><input size="40" wicket:id="cargo" tabindex="1" title="cargo" /></td>
-	</tr>
-	<tr>
-		<td>Partido</td>
-		<td><input size="20" wicket:id="partido" tabindex="1"
-			title="partido" /></td>
-	</tr>
-	<tr>
 		<td>Estado</td>
-		<td><input size="10" wicket:id="estado" tabindex="1"
-			title="estado" /></td>
-	</tr>
-	<tr>
-		<td>Profissão</td>
-		<td><input size="40" wicket:id="profissao" tabindex="1"
-			title="profissao" /></td>
-	</tr>
-	<tr>
-		<td>E-mail</td>
-		<td><input size="40" wicket:id="email" tabindex="1" title="email" /></td>
-	</tr>
-	<tr>
-		<td>Escolaridade</td>
-		<td><input size="5" wicket:id="escolaridade" tabindex="1"
-			title="escolaridade" /></td>
-	</tr>
-	<tr>
-		<td>E-mail Particular</td>
-		<td><input size="40" wicket:id="emailParticular" tabindex="1"
-			title="emailParticular" /></td>
-	</tr>
-	<tr>
-		<td>Site</td>
-		<td><input size="40" wicket:id="site" tabindex="1" title="site" /></td>
+		<td><select><input wicket:id="estado">
+			<option>Selecione um estado</option>
+			<option>BA</option>
+			<option>DF</option>
+			<option>RJ</option>
+			</select><br/>
+		</td>
+			
 	</tr>
 	<tr>
 		<td><input wicket:id="btnConfirmar" tabindex="4" type="submit"
