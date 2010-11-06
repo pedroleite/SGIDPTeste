@@ -25,12 +25,12 @@ public class CadastroParlamentarPage extends WebPage {
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 
-		form
-				.add(new TextField<String>("nomeParlamentar",
-						new PropertyModel<String>(this,
-								"Parlamentar.nomeParlamentar")));
+		form.add(new TextField<String>("nomeParlamentar",
+				new PropertyModel<String>(this,
+						"cadastroParlamentar.nomeParlamentar")));
+
 		form.add(new TextField<String>("estado", new PropertyModel<String>(
-				this, "Parlamentar.estado")));
+				this, "cadastroParlamentar.estado")));
 
 		DropDownChoice estado = new DropDownChoice("estado", Arrays
 				.asList(new String[] { "BA", "DF", "GO" }));
@@ -40,7 +40,7 @@ public class CadastroParlamentarPage extends WebPage {
 			public void onSubmit() {
 				ParlamentarBO parlamentarBO = new ParlamentarBO();
 				parlamentarBO.salvar(cadastroParlamentar);
-				setResponsePage(CadastroClienteRespostaPage.class);
+				// setResponsePage(CadastroClienteRespostaPage.class);
 			}
 		});
 		form.add(new Button("btnCancelar"));
