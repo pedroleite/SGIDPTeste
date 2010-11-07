@@ -47,5 +47,7 @@ public class Parlamentar extends Entidade implements Serializable {
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
+	
+	
 
 }
