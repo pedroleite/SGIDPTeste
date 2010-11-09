@@ -1,0 +1,100 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+<head>
+<title>SGIDP - Sistema Integrado de Gerenciamento de Dados Parlamentar</title>
+	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../css/sgidp.css">
+	<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+	<script>
+		$(function(){
+			$('#tt2').datagrid({
+				title:'My Title',
+				iconCls:'icon-save',
+				width:600,
+				height:350,
+				nowrap: false,
+				striped: true,
+				fit: true,
+				url:'datagrid_data.json',
+				sortName: 'code',
+				sortOrder: 'desc',
+				idField:'code',
+				frozenColumns:[[
+	                {field:'ck',checkbox:true},
+	                {title:'code',field:'code',width:80,sortable:true}
+				]],
+				columns:[[
+			        {title:'Base Information',colspan:3},
+					{field:'opt',title:'Operation',width:100,align:'center', rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Edit Delete</span>';
+						}
+					}
+				],[
+					{field:'name',title:'Name',width:120},
+					{field:'addr',title:'Address',width:120,rowspan:2,sortable:true},
+					{field:'col4',title:'Col41',width:150,rowspan:2}
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+		});
+		function addmenu(){
+			var header = $('.layout-expand .layout-button-down').parent().parent();
+			var menu = $('<div style="position:absolute;left:0;top:0;background:#fafafa;"></div>').appendTo(header);
+			var btn = $('<a href="#">test</a>').appendTo(menu);
+			btn.menubutton({
+				menu:'#mymenu'
+			});
+		}
+	</script>
+</head>
+<body class="easyui-layout">
+		<div region="north" title="" split="true" style="height:60px;overflow:hidden;">
+			<div id="content_titulo">
+				SGIDP - Sistema Integrado de Gerenciamento de Dados Parlamentar
+			</div>
+			<div id="content" >
+				<div class="textoleft">
+					<span wicket:id="migalha"></span>
+				</div>
+				<div class="textoright" style="margin-top:-13px;" >
+					Usuário:&nbsp<span wicket:id="usuarioLogado"></span>&nbsp&nbsp
+				</div>
+			</div>
+		</div>
+		<div region="south" title="" split="true" style="height:24px;">
+			<center> Projeto DAWA </center>
+		</div>
+
+		<div region="west" split="true" title="Menu" style="width:200px;padding1:1px;overflow:hidden;">
+			<div class="easyui-accordion" fit="true" border="false">
+			
+				<!-- Menu Usuairo -->
+				<div title="Usuário" wicket:id="div_manter_usuario_aberto" selected="true"  style="overflow:auto;">
+		          	<p>	<a href="#" wicket:id="manterUsuarioLink">Cadastrar usuário</a><p>
+				</div>
+				<div title="Usuário" wicket:id="div_manter_usuario_fechado" style="overflow:auto;">
+		 			<p><a href="#" wicket:id="manterUsuarioLink">Cadastrar usuário</a>	</p>
+				</div>
+				
+				
+				
+				<!-- Menu Parlamentar -->
+				<div title="Parlamentar" wicket:id="div_manter_parlamentar_aberto" selected="true"  style="overflow:auto;">
+		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	</p>
+				</div>
+				<div title="Parlamentar" wicket:id="div_manter_parlamentar_fechado" style="overflow:auto;">
+		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	<p>
+				</div>
+				
+
+			</div>
+		</div>
+
+		<div region="center" title=".">
+			<wicket:child />
+		</div>
+</body>
+</html>
