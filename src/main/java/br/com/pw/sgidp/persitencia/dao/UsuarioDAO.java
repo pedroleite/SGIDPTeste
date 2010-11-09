@@ -43,4 +43,15 @@ public class UsuarioDAO extends DAOAbstrato<Usuario> {
 			return null;
 		}
 	}
+
+	@SuppressWarnings("unchecked")
+	public Collection<Usuario> buscaUsuarioPorFiltro(String tipoFiltro,
+			String parametro) {
+
+		Query query = getSession().createQuery(
+				"from Usuario usuario where usuario." + tipoFiltro
+						+ " like :parametro");
+		query.setParameter("parametro", "%" + parametro + "%");
+		return query.getResultList();
+	}
 }

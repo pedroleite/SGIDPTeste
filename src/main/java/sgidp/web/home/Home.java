@@ -2,15 +2,12 @@ package sgidp.web.home;
 
 import org.apache.wicket.PageParameters;
 
-import sgidp.web.template.WebSite;
+import sgidp.web.template.BasePage;
 
-
-public class Home extends WebSite {
+public class Home extends BasePage {
 
 	public Home(final PageParameters parameters) {
-		super(parameters);
-		setModulo("Home");
-		setPagina("Seja bem vindo!");
+		super(parameters, "Home", "Seja bem vindo!");
 	}
 
 }

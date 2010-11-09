@@ -57,4 +57,9 @@ public class UsuarioBO {
 	public Collection<Usuario> getTodosUsuarios() {
 		return getUsuarioDAO().consultarTodos();
 	}
+
+	public Collection<Usuario> getUsuarioPorFiltro(String tipoFiltro,
+			String parametro) {
+		return getUsuarioDAO().buscaUsuarioPorFiltro(tipoFiltro, parametro);
+	}
 }

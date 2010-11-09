@@ -11,25 +11,24 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
-import sgidp.web.home.Home;
 import sgidp.web.parlamentar.CadastroParlamentarPage;
+import sgidp.web.usuario.ManterUsuario;
 import br.com.pw.sgidp.negocio.entidade.Permissao;
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 
 import com.pw.SessaoWeb;
 
-public class WebSite extends WebPage {
-
+public class BasePage extends WebPage {
 	private static final String ABERTO = "aberto";
 	private static final String FECHADO = "fechado";
-	private String modulo = "";
-	private String pagina = "";
 	private static String moduloSelecionado = "";
 
-	public WebSite(final PageParameters parameters) {
+	public BasePage(final PageParameters parameters, String modulo,
+			String pagina) {
 		if (!parameters.getString("link", "").equals("")) {
 			moduloSelecionado = parameters.getString("link", "");
 		}
+
 		add(new Label("migalha", "Onde estou: " + modulo + " -> " + pagina));
 		Usuario usuario = ((SessaoWeb) Session.get()).getUsuarioLogado();
 		String[] arrayNome = usuario.getNome().split(" ");
@@ -67,7 +66,7 @@ public class WebSite extends WebPage {
 		WebMarkupContainer webMarkupContainer = new WebMarkupContainer(
 				"div_manter_usuario_" + descricaoDiv);
 		webMarkupContainer.add(new BookmarkablePageLink("manterUsuarioLink",
-				Home.class).setParameter("link", "01"));
+				ManterUsuario.class).setParameter("link", "01"));
 
 		verificaMarkup("01", descricaoDiv, isTemPermissao, webMarkupContainer);
 
@@ -81,6 +80,7 @@ public class WebSite extends WebPage {
 		webMarkupContainer.add(new BookmarkablePageLink(
 				"manterParlamentarLink", CadastroParlamentarPage.class)
 				.setParameter("link", "02"));
+
 		verificaMarkup("02", descricaoDiv, isTemPermissao, webMarkupContainer);
 		return webMarkupContainer;
 	}
@@ -101,21 +101,4 @@ public class WebSite extends WebPage {
 			webMarkupContainer.setVisible(false);
 		}
 	}
-
-	public void setModulo(String modulo) {
-		this.modulo = modulo;
-	}
-
-	public void setPagina(String pagina) {
-		this.pagina = pagina;
-	}
-
-	public String getModulo() {
-		return modulo;
-	}
-
-	public String getPagina() {
-		return pagina;
-	}
-
 }

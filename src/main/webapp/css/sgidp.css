@@ -8,6 +8,7 @@ body {
 	height: 99.9999%;
 }
 
+
 /*div que cont&eacute;m o aviso na tela de login */
 #principal {
 	padding-top: 1em;
@@ -27,140 +28,6 @@ body {
 	text-align: left;
 	font-weight: bold;
 
-}
-
-/*estilo das p&aacute;ginas de menus*/
-#subMenu {
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	text-align: left;
-	border-color: #0000FF;
-	background-color: #ecf2ff;
-	padding: 2px;
-}
-
-#subMenu #menulist li a {
-	color: #00F;
-	float: none;
-	border: 0px;
-}
-
-#subMenu #menulist li a:hover {
-	color: #FFF;
-	float: none;
-}
-
-/*estilo dos links*/
-a:link {
-	color: #0000FF;
-	text-decoration: none;
-}
-
-a:visited {
-	color: #0000FF;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #FF0000;
-	text-decoration: underline;
-}
-
-a:active {
-	color: #FF0000;
-	text-decoration: none;
-}
-
-/*estilo das listas n&atilde;o ordenadas*/
-ul li {
-	font-weight: bold;
-	list-style-image: url(../imagens/bullet1a.gif);
-}
-
-ul li li {
-	font-weight: normal;
-	list-style-image: url(../imagens/bullet1a.gif);
-}
-
-/*div que cont&eacute;m todas as outras estruturas*/
-#estrutura { #
-	height: 70%;
-}
-
-/*div contendo o menu horizontal*/
-#menu {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	background-color: #cc6600;
-	float: left;
-}
-
-/*estilos do menu*/
-#menulist {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	font-size: 1em;
-	/*	background-color: #cc6600;*/
-	color: White;
-	font-family: verdana, arial, helvetica, sans-serif;
-	clear: both;
-	list-style-type: none;
-}
-
-#menulist ul {
-	height: 20px;
-}
-
-#menulist li {
-	display: inline;
-}
-
-.primeiro {
-	border-left: 1px solid #fff;
-}
-
-#menulist li a {
-	padding: 0.2em 1em;
-	text-decoration: none;
-	float: left;
-	/*  background-color: #cc6600;*/
-	color: White;
-	border-right: 1px solid #fff;
-	height: 15px;
-	_height: 16px;
-}
-
-#menulist li a:hover {
-	background-color: #369;
-	color: #fff;
-}
-
-/*div que posiciona a barra de caminho do sistema "bread-crumbs"*/
-#caminho {
-	border-bottom-color: #8cacbb;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-top-color: #8cacbb;
-	border-top-style: solid;
-	border-top-width: 1px;
-	padding-left: 1em;
-	clear: both;
-}
-
-/*div com o rodap&eacute; do sistema*/
-#rodape {
-	bottom: 0;
-	clear: both;
-	height: 25px;
-	border-top: 1px solid #8cacbb;
-	border-bottom: 1px solid #8cacbb;
-	text-align: center;
-	background: url(../imagens/bck4.jpg) repeat-y;
-	bottom: 0px;
 }
 
 .cinquenta {
@@ -195,58 +62,6 @@ ul li li {
 	text-align: right;
 }
 
-table caption {
-	color: #3333CC;
-	font-weight: bold;
-	text-align: center;
-	font-size: 1em;
-}
-
-.tdHeader1 {
-	background-color: #87AEFC;
-	color: #FFFFFF;
-	font-weight: bold;
-	text-align: center;
-}
-
-.tdHeader2 {
-	background-color: #87AEFC;
-}
-
-/* Utilizado na tabela de subregistro*/
-.tdHeader3 {
-	background-color: #D5E1FA;
-	text-align: center;
-	font-weight: bold;
-	subregistro_th_titulo
-}
-
-.tdHeader3right {
-	background-color: #D5E1FA;
-	text-align: right;
-}
-
-.tdHeader4 {
-	background-color: #ECF2FF;
-}
-
-.contentBold {
-	font-weight: bold;
-	text-align: auto;
-}
-
-.contentRight {
-	text-align: right;
-}
-
-.contentCenter {
-	text-align: center;
-}
-
-.contentRightpad {
-	text-align: right;
-	padding-right: 6px;
-}
 
 #skip a {
 	position: absolute;
@@ -271,10 +86,6 @@ table caption {
 	background: #ffffcc;
 }
 
-legend {
-	border: 1px solid blue;
-	padding: 0 3px;
-}
 
 .li1 {
 	background-color: #ECF2FF;
@@ -323,29 +134,6 @@ legend {
 	padding-right: 20px;
 }
 
-#formulario_popup {
-	font-size: 11px;
-	border: 1px solid #4582FC;
-	font-weight: bold;
-	background-color: #ECF2FF;
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-
-}
-
-
-
-
-#corpoformulario {
-	clear: both;
-	padding-top: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border: solid 1px #000000;
-	height: 95%;
-}
-
 .li1 a { /*display: block;*/
 	padding: 0px 10px;
 }
@@ -355,24 +143,6 @@ legend {
 	padding: 0px;
 }
 
-.tabact {
-	background-color: #678EDC;
-}
-
-.tabact .a1,.tabact .a1:visited {
-	color: #FFF;
-}
-
-.pesquisa.navegacao {
-	text-align: center;
-	margin: 5px 0px;
-}
-
-.pesquisa a {
-	padding: 3px;
-}
-
-/*========= ELEMENTOS GERAIS =========*/
 h5 {
 	text-align: center;
 	margin-top: 100px;
@@ -380,66 +150,6 @@ h5 {
 	font-size: 120%;
 }
 
-/*========= TOPO - CABECALHO=========*/
-#cabecalho {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 110px;
-	clear: both;
-	border-bottom-color: #8CACBB;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-}
-
-#cabecalhologin {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 87px;
-	clear: both;
-	border-bottom-color: #8CACBB;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-}
-
-/*DIV que posiciona os detalhes do sistema*/
-#detalhes-sistema {
-	width: 28.5em;
-	float: right;
-	padding: 4px 2em 0 0;
-	text-align: left;
-}
-
-#detalhes-sistema h1 {
-	font-size: 160%;
-	margin-bottom: -.7em;
-	font-weight: normal;
-	margin-top: 0;
-}
-
-/*Posicionamento da Figura Marca Cliente*/
-#portal-logo {
-	width: 40%;
-	float: left;
-	margin: .88em 1em;
-	_margin: .8em 1em;
-	/*padding-bottom:2em;*/
-}
-
-#marca-sistema {
-	margin-top: 2em;
-	_margin-top: 1em;
-}
-
-/*DIV com o conteudo da tela logado*/
-#conteudoLogado {
-	margin: 2em;
-	margin-left: 25%;
-	margin-right: 25%;
-	min-width: 40%;
-	text-align: center;
-}
 
 .formulario {
 	text-align: left;
@@ -449,45 +159,6 @@ h5 {
 	border-color: white;
 }
 
-.formulario_login input.button {
-	color: white;
-	background-color: #87AEFC;
-}
-
-.aviso_login {
-	margin: 10px;
-	margin-left: 50px;
-	margin-right: 50px;
-	text-align: justify;
-}
-
-.aviso_login h2 {
-	border: none;
-	text-transform: none;
-	color: #000;
-	font-size: 120%;
-	padding-left: 0;
-	padding-top: 0;
-}
-
-#direita {
-	float: right;
-	width: 180px;
-	padding-top: 1em;
-	padding-bottom: 0.8em;
-	padding-right: 3em;
-	text-align: center;
-}
-
-#direita p {
-	font-weight: bold;
-	font-size: 90%;
-	margin-bottom: 5px;
-	padding: 0;
-	text-align: center;
-}
-
-/*========= TABELAS do sistema =========*/
 table {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -527,30 +198,7 @@ table td {
 	padding: 5px 5px 5px 5px;
 }
 
-.formulario_td_busca {
-	padding-right: 10px;
-	text-align: left;
-	font-weight: bold;
-	font-size: 12px;
-	background-color: #87AEFC;
-}
-
-.formulario_td_busca_center {
-	padding-right: 10px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 12px;
-	background-color: #87AEFC;
-}
-
-.titulo_subsecao_formulario {
-	font-size: 100%;
-	padding-left: 10px;
-	font-weight: bold;
-}
-
-/* Área de formulários */
-.formulario_1 {
+.tabela {
 	background-color: #D5E1FA;
 	text-align: left;
 	font-weight: bold;
@@ -558,23 +206,22 @@ table td {
 	border: solid 1px #ECF2FF;
 	height: 25px;
 }
+.body {
+	background-color: #D5E1FA;
+	height: 100%;
 
-.formulario_2 {
-	font-size: 11px;
+}
+
+.tabela_tr {
 	background-color: #ECF2FF;
 	height: 20px;
-	border-width: 0px;
 }
 
-/* Área de formulários */
-.formulario_td_titulo {
-	background-color: #D5E1FA;
-	padding-right: 10px;
-	text-align: left;
-	width: 30%;
-	font-weight: bold;
-	font-size: 10px;
+.tabela_d {
+	font-size: 11px;
+	border: solid 1px #FFFFFF;
 }
+
 
 /*======== Inputs do formulário ==========*/
 .txt_pp {
@@ -665,10 +312,6 @@ table td {
 	width: 406px;
 }
 
-#formulario input.button {
-	color: white;
-	background-color: #87AEFC;
-}
 
 /* Botões */
 .button {
@@ -676,7 +319,7 @@ table td {
 	border: 1px solid #4582FC;
 	font-weight: bold;
 	background-color: #ECF2FF;
-	height: 26px;
+	height: 19px;
 }
 
 .dia {
@@ -746,114 +389,6 @@ a.title_hint:hover {
 	width: 5%;
 }
 
-/*========== TR de botões para grid de subregistros =====*/
-.botoes_formulario {
-	background: inherit;
-	background-color: #87AEFC;
-	text-align: right;
-}
-
-/* Paginação da inclusão de sub registros */
-.paginacao_subregistro {
-	text-align: center;
-}
-
-/*========= LINK OCULTO PARA O TOPO DO SISTEMA ===========*/
-.hide {
-	position: fixed;
-	margin-top: 0px;
-	float: left;
-	width: 1px;
-	height: 1px;
-}
-
-.hide a {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	width: 0;
-	height: 0;
-	font-size: 0;
-	color: #white;
-	overflow: hidden;
-	text-decoration: none;
-}
-
-.hide a:active,.hide a:focus {
-	position: absolute;
-	overflow: visible;
-	margin: 0;
-	padding: 1px;
-	width: auto;
-	height: auto;
-	font-size: 0.8em;
-	border: 0;
-	text-decoration: none;
-	background: #ffffcc;
-	color: #666;
-}
-
-/*===  Barra com os links voltar - imprimir - topo*/
-#barraTexto {
-	border-color: #3333CC;
-	border-top-style: solid;
-	border-top-width: 1px;
-	clear: both;
-	margin-top: 1.5em;
-	margin-bottom: 10px;
-	text-align: right;
-	padding-top: 5px;
-}
-
-#sistemaRight {
-	text-align: right;
-	color: #FFFFFF;
-	font-weight: bold;
-	margin-top: -85px;
-}
-
-#bg {
-	background-image: url('../imagens/bck3.jpg');
-	background-repeat: repeat-y;
-	margin-top: -9px;
-	margin-left: -9px;
-	margin-right: -9px;
-	height: 90px;
-}
-
-A.textolinktopo {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #FFFFFF;
-	text-decoration: underline;
-	font-weight: bold;
-}
-
-A.textolinktopo2:hover {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: red;
-	text-decoration: underline;
-}
-
-A.menu {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #990000;
-	text-decoration: none;
-	vertical-align: middle;
-}
-
-A.menu:hover {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	color: #ff6633;
-	text-decoration: none;
-}
-
 .textoleft {
 	text-align: left;
 }
@@ -862,41 +397,32 @@ A.menu:hover {
 	text-align: right;
 }
 
-table.width100 {
-	width: 100%;
-	border: solid 1px #000000;
+.navigator{
+	margin-top:-14px;
+	text-align: right;
 }
 
-table.formulario {
-	width: 100%;
-	border: solid 1px #000000;
-}
-
-img.formulario {
-	border: 0px;
-}
-
-table.formulariocadastro {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	border-style: none;
-	border-width: 0px;
-	margin-top: 0px;
+.cabecalho_formulario {
+	background: inherit;
+	background-color: #87AEFC;
 	text-align: left;
-	font-weight: bold;
+	height: 23px;
 	width: 100%;
-	background-color: #EBEBEB;
 }
 
-table.topoformulario {
-	background-color: "#87AEFC";
+.cabecalho_botoes{
+	text-align: right;
+	margin-top: -20px;
 }
 
-.clearFix:after { /* for modern browsers */
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
+.titulo_formulario{
+	height: 25px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15;
+	background-color: #D5E1FA;
 }
+
+
+
