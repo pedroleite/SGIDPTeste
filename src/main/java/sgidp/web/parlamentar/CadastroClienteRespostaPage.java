@@ -5,7 +5,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 
 /**
- * Cadastro clients
+ * Cadastro de parlametares
  */
 public class CadastroClienteRespostaPage extends WebPage {
 
@@ -13,7 +13,7 @@ public class CadastroClienteRespostaPage extends WebPage {
 
 	public CadastroClienteRespostaPage(final PageParameters parameters) {
 		add(new FeedbackPanel("message"));
-		info("Cliente inserido com sucesso");
+		info("Parlamentar inserido com sucesso");
 	}
 
 }

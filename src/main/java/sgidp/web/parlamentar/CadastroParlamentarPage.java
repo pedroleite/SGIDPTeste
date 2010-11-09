@@ -3,30 +3,28 @@ package sgidp.web.parlamentar;
 import java.util.Date;
 
 import org.apache.wicket.PageParameters;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 
-import sgidp.web.template.WebSite;
-
+import sgidp.web.template.BasePage;
 import br.com.pw.sgidp.negocio.ParlamentarBO;
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 
-public class CadastroParlamentarPage extends WebSite {
+public class CadastroParlamentarPage extends BasePage {
 
 	final long serialVersionUID = 1L;
 	Parlamentar cadastroParlamentar = new Parlamentar();
 
 	@SuppressWarnings("serial")
 	public CadastroParlamentarPage(final PageParameters parameters) {
-		super(parameters);
+		super(parameters,"Parlamentar","Cadastrar parlamentar");
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 
 		form.add(new TextField<String>("nome", new PropertyModel<String>(this,
-				"cadastroParlamentar.nome")));
+				"cadastroParlamentar.nomeParlamentar")));
 		form.add(new TextField<String>("tratamento", new PropertyModel<String>(
 				this, "cadastroParlamentar.tratamento")));
 		form.add(new TextField<String>("nomeCompleto",
