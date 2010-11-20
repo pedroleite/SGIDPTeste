@@ -40,11 +40,11 @@ public class MockCarregarUsuarioEPermissoes {
 	private static Collection<Permissao> criarPermissioes() {
 		PermissaoBO permissaoBO = new PermissaoBO();
 		Permissao permissao1 = new Permissao();
-		permissao1.setCodigo("01");
+		permissao1.setCodigo("02");
 		permissao1.setDescricao("CadastrarUsuario");
 
 		Permissao permissao2 = new Permissao();
-		permissao2.setCodigo("02");
+		permissao2.setCodigo("01");
 		permissao2.setDescricao("CadastrarParlamentar");
 
 		permissaoBO.incluir(permissao1);

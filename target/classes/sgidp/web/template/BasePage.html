@@ -1,5 +1,14 @@
 <html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
 <head>
+
+<script type="text/javascript">
+function confirmarExclusao(){
+	if( confirm('Tem certeza que deseja excluir esse registro?')){
+		return true;
+	}
+	return false;
+}
+</script>
 <title>SGIDP - Sistema Integrado de Gerenciamento de Dados Parlamentar</title>
 	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="../themes/icon.css">
@@ -71,6 +80,17 @@
 		<div region="west" split="true" title="Menu" style="width:200px;padding1:1px;overflow:hidden;">
 			<div class="easyui-accordion" fit="true" border="false">
 			
+			
+							
+				<!-- Menu Parlamentar -->
+				<div title="Parlamentar" wicket:id="div_manter_parlamentar_aberto" selected="true"  style="overflow:auto;">
+		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	</p>
+				</div>
+				<div title="Parlamentar" wicket:id="div_manter_parlamentar_fechado" style="overflow:auto;">
+		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	<p>
+				</div>
+				
+			
 				<!-- Menu Usuairo -->
 				<div title="Usuário" wicket:id="div_manter_usuario_aberto" selected="true"  style="overflow:auto;">
 		          	<p>	<a href="#" wicket:id="manterUsuarioLink">Cadastrar usuário</a><p>
@@ -80,20 +100,12 @@
 				</div>
 				
 				
-				
-				<!-- Menu Parlamentar -->
-				<div title="Parlamentar" wicket:id="div_manter_parlamentar_aberto" selected="true"  style="overflow:auto;">
-		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	</p>
-				</div>
-				<div title="Parlamentar" wicket:id="div_manter_parlamentar_fechado" style="overflow:auto;">
-		 				<p><a href="#" wicket:id="manterParlamentarLink">Cadastrar Parlamentar</a>	<p>
-				</div>
-				
+
 
 			</div>
 		</div>
 
-		<div region="center" title=".">
+		<div region="center" title="." style="background-color: #D5E1FA;">
 			<wicket:child />
 		</div>
 </body>

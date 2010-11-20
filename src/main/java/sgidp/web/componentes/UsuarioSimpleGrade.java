@@ -2,6 +2,7 @@ package sgidp.web.componentes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import br.com.pw.sgidp.negocio.UsuarioBO;
@@ -37,12 +38,27 @@ public class UsuarioSimpleGrade implements Serializable {
 	}
 
 	public void criaLista(String tipoFiltro, String parametro) {
-		if (tipoFiltro!=null && parametro != null && !tipoFiltro.equals("")
+		if (tipoFiltro != null && parametro != null && !tipoFiltro.equals("")
 				&& !tipoFiltro.equals("Escolha")) {
 			listaUsuario = (List<Usuario>) new UsuarioBO().getUsuarioPorFiltro(
 					tipoFiltro.toLowerCase(), parametro);
 		} else {
 			listaUsuario = (List<Usuario>) new UsuarioBO().getTodosUsuarios();
 		}
+	}
+
+	public void criaLista(Long idUsuario) {
+		List<Usuario> listaUsuarioEmFoco = new ArrayList<Usuario>();
+		
+		UsuarioBO usuarioBO = new UsuarioBO();
+		
+		Usuario usuarioEmFoco = usuarioBO.obterPorId(idUsuario);
+		listaUsuarioEmFoco.add(usuarioEmFoco);
+
+		Collection<Usuario> todosUsuarios = usuarioBO.getTodosUsuarios();
+		todosUsuarios.remove(usuarioEmFoco);
+		listaUsuarioEmFoco.addAll(todosUsuarios);
+
+		listaUsuario = listaUsuarioEmFoco;
 	}
 }

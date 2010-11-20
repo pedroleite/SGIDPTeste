@@ -8,9 +8,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PERMISSAO")
 public class Permissao extends Entidade implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4861725819555568799L;
 	private String codigo;
 	private String descricao;

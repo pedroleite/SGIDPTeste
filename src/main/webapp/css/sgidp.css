@@ -1,4 +1,3 @@
-/*estilo padr&atilde;o para o body */
 body {
 	font: 0.7em Verdana, Arial, Lucida, Helvetica, sans-serif;
 	margin: 0;
@@ -206,11 +205,6 @@ table td {
 	border: solid 1px #ECF2FF;
 	height: 25px;
 }
-.body {
-	background-color: #D5E1FA;
-	height: 100%;
-
-}
 
 .tabela_tr {
 	background-color: #ECF2FF;
@@ -403,6 +397,7 @@ a.title_hint:hover {
 }
 
 .cabecalho_formulario {
+	padding-top:2px;
 	background: inherit;
 	background-color: #87AEFC;
 	text-align: left;
@@ -424,5 +419,9 @@ a.title_hint:hover {
 	background-color: #D5E1FA;
 }
 
+#erro{
+	color: red;
+
+}
 
 

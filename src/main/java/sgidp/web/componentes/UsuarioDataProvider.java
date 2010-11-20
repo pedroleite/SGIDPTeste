@@ -17,13 +17,17 @@ public class UsuarioDataProvider implements IDataProvider<Usuario> {
 		}
 		return usuarioSimpleGrade;
 	}
-	
+
+	public UsuarioDataProvider(String tipoFiltro, String parametro) {
+		getUsuarioSimpleGrade().criaLista(tipoFiltro, parametro);
+	}
+
 	public UsuarioDataProvider() {
-		
+		getUsuarioSimpleGrade().criaLista("", "");
 	}
 	
-	public UsuarioDataProvider(String tipoFiltro, String parametro) {
-		getUsuarioSimpleGrade().criaLista(tipoFiltro,parametro);
+	public UsuarioDataProvider(Long idUsuario) {
+		getUsuarioSimpleGrade().criaLista(idUsuario);
 	}
 
 	public Iterator<? extends Usuario> iterator(int primeiro, int contador) {
