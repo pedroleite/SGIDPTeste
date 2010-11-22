@@ -11,8 +11,8 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 
-import sgidp.web.parlamentar.CadastroParlamentarPage;
-import sgidp.web.usuario.ManterUsuario;
+import sgidp.web.parlamentar.ListarParlamentarPage;
+import sgidp.web.usuario.ListarUsuarioPage;
 import br.com.pw.sgidp.negocio.entidade.Permissao;
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 
@@ -28,24 +28,37 @@ public class BasePage extends WebPage {
 		if (!parameters.getString("link", "").equals("")) {
 			moduloSelecionado = parameters.getString("link", "");
 		}
+		montaFormulario(modulo, pagina);
+	}
 
+	public BasePage(String modulo, String pagina) {
+		montaFormulario(modulo, pagina);
+	}
+
+	private void montaFormulario(String modulo, String pagina) {
 		add(new Label("migalha", "Onde estou: " + modulo + " -> " + pagina));
 		Usuario usuario = ((SessaoWeb) Session.get()).getUsuarioLogado();
-		String[] arrayNome = usuario.getNome().split(" ");
-		add(new Label("usuarioLogado", arrayNome[0]));
+		String nomeUsuarioLogado = "";
 
-		Map<String, String> mapaPermissoes = getMapaPermissoes(usuario
-				.getListaPermissao());
+		Map<String, String> mapaPermissoes = new HashMap<String, String>();
+		if (usuario != null) {
+			String[] arrayNome = usuario.getNome().split(" ");
+			nomeUsuarioLogado = arrayNome[0];
+
+			mapaPermissoes = getMapaPermissoes(usuario.getListaPermissao());
+		}
+		add(new Label("usuarioLogado", nomeUsuarioLogado));
+
 		boolean isTemPermissao = false;
 		// Usuario
 
 		isTemPermissao = mapaPermissoes.containsKey("01") ? true : false;
-		add(markupContainerManterUsuario(ABERTO, isTemPermissao));
-		add(markupContainerManterUsuario(FECHADO, isTemPermissao));
-
-		isTemPermissao = mapaPermissoes.containsKey("02") ? true : false;
 		add(markupContainerManterParlamentar(ABERTO, isTemPermissao));
 		add(markupContainerManterParlamentar(FECHADO, isTemPermissao));
+
+		isTemPermissao = mapaPermissoes.containsKey("02") ? true : false;
+		add(markupContainerManterUsuario(ABERTO, isTemPermissao));
+		add(markupContainerManterUsuario(FECHADO, isTemPermissao));
 
 	}
 
@@ -61,27 +74,29 @@ public class BasePage extends WebPage {
 		return mapaPermissao;
 	}
 
+	@SuppressWarnings( { "rawtypes", "unchecked" })
 	private WebMarkupContainer markupContainerManterUsuario(
 			String descricaoDiv, boolean isTemPermissao) {
 		WebMarkupContainer webMarkupContainer = new WebMarkupContainer(
 				"div_manter_usuario_" + descricaoDiv);
 		webMarkupContainer.add(new BookmarkablePageLink("manterUsuarioLink",
-				ManterUsuario.class).setParameter("link", "01"));
+				ListarUsuarioPage.class).setParameter("link", "02"));
 
-		verificaMarkup("01", descricaoDiv, isTemPermissao, webMarkupContainer);
+		verificaMarkup("02", descricaoDiv, isTemPermissao, webMarkupContainer);
 
 		return webMarkupContainer;
 	}
 
+	@SuppressWarnings( { "rawtypes", "unchecked" })
 	private WebMarkupContainer markupContainerManterParlamentar(
 			String descricaoDiv, boolean isTemPermissao) {
 		WebMarkupContainer webMarkupContainer = new WebMarkupContainer(
 				"div_manter_parlamentar_" + descricaoDiv);
 		webMarkupContainer.add(new BookmarkablePageLink(
-				"manterParlamentarLink", CadastroParlamentarPage.class)
-				.setParameter("link", "02"));
+				"manterParlamentarLink", ListarParlamentarPage.class)
+				.setParameter("link", "01"));
 
-		verificaMarkup("02", descricaoDiv, isTemPermissao, webMarkupContainer);
+		verificaMarkup("01", descricaoDiv, isTemPermissao, webMarkupContainer);
 		return webMarkupContainer;
 	}
 

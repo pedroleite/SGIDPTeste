@@ -1,6 +1,6 @@
 package br.com.pw.sgidp.persitencia.dao;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Query;
 
@@ -17,8 +17,7 @@ public class ParlamentarDAO extends DAOAbstrato<Parlamentar> {
 		getSession().persist(entidade);
 	}
 
-	@SuppressWarnings("unchecked")
-	public Collection<Parlamentar> consultarTodos() {
+	public List<Parlamentar> consultarTodos() {
 		Query query = getSession().createQuery("from Parlamentar parlamentar");
 		return query.getResultList();
 	}
@@ -29,5 +28,13 @@ public class ParlamentarDAO extends DAOAbstrato<Parlamentar> {
 
 	public Parlamentar obterPorId(Long id) {
 		return getSession().find(Parlamentar.class, id);
+	}
+
+	public List<Parlamentar> buscaPorFiltro(String filtro, String parametro) {
+		Query query = getSession().createQuery(
+				"from Parlamentar parlamentar where parlamentar." + filtro
+						+ " like :parametro");
+		query.setParameter("parametro", "%" + parametro + "%");
+		return query.getResultList();
 	}
 }

@@ -147,5 +147,4 @@ public class Parlamentar extends Entidade implements Serializable {
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-
 }

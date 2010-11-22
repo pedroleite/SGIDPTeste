@@ -1,0 +1,40 @@
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+
+<wicket:extend>
+	<form method="post" wicket:id="form">
+	<div class="cabecalho_formulario" style="text-align: right;">
+		<input type="submit" wicket:id="btnSalvar" value="  Salvar  " class="button">
+		<input type="submit" wicket:id="btnVoltar" value="  Voltar  " class="button">
+	</div>
+	
+	<div class="titulo_formulario">Trocar senha</div>
+	<div id="erro"><span wicket:id="mensagem"></span></div>
+	<table class="tabela">
+		<tr>
+			<td class="quinze">Nome</td>
+			<td class="oitentaecindo"><input class="txt_gd" disabled="disabled" type="text"
+				wicket:id="nome" name="nome" maxlength="50px" /></td>
+		</tr>
+		<tr>
+			<td class="quinze">Login</td>
+			<td class="oitentaecindo"><input class="txt_md" disabled="disabled" type="text"
+				wicket:id="login" name="login" maxlength="20" /></td>
+		</tr>
+		<tr>
+			<td class="quinze">Senha</td>
+			<td class="oitentaecindo"><input class="txt_pq" type="password"
+				wicket:id="senha" name="senha" maxlength="20" /></td>
+		</tr>
+		<tr>
+			<td class="quinze">Confirmar Senha</td>
+			<td class="oitentaecindo"><input class="txt_pq" type="password"
+				wicket:id="confirmarSenha" name="confirmarSenha" maxlength="20" /></td>
+		</tr>
+
+	</table>
+	</form>
+</wicket:extend>
+</body>
+</html>

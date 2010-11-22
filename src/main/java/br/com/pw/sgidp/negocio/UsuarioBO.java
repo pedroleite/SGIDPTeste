@@ -34,7 +34,12 @@ public class UsuarioBO {
 		if (usuario.getLogin().equals("sgidp")
 				&& usuario.getSenha().equals("123")) {
 			usuario.setNome("Usuario padrão");
+			usuario.setId(new Long(0));
+			usuario.setListaPermissao(new PermissaoBO()
+					.getListaTodasPermissoes());
+
 			usuarioLogado = usuario;
+
 			return true;
 		}
 		return false;
@@ -50,6 +55,21 @@ public class UsuarioBO {
 		getUsuarioDAO().finalizarTransacao();
 	}
 
+	public void atualizar(Usuario usuario) {
+		getUsuarioDAO().iniciarTransacao();
+		getUsuarioDAO().atualizar(usuario);
+		getUsuarioDAO().finalizarTransacao();
+	}
+
+	public void trocarSenha(Usuario usuario) {
+		Usuario usuarioParaTrocaSenha = getUsuarioDAO().obterPorId(
+				usuario.getId());
+		usuarioParaTrocaSenha.setSenha(usuario.getSenha());
+		getUsuarioDAO().iniciarTransacao();
+		getUsuarioDAO().atualizar(usuarioParaTrocaSenha);
+		getUsuarioDAO().finalizarTransacao();
+	}
+
 	public Usuario obterPorId(Long id) {
 		return getUsuarioDAO().obterPorId(id);
 	}
@@ -61,5 +81,20 @@ public class UsuarioBO {
 	public Collection<Usuario> getUsuarioPorFiltro(String tipoFiltro,
 			String parametro) {
 		return getUsuarioDAO().buscaUsuarioPorFiltro(tipoFiltro, parametro);
+	}
+
+	public boolean isLoginCadastrado(Usuario usuario) {
+		if (getUsuarioDAO().buscaUsuarioPorLogin(usuario).size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	public void excluir(Usuario usuario) {
+
+		getUsuarioDAO().iniciarTransacao();
+		getUsuarioDAO().excluir(usuario);
+		getUsuarioDAO().finalizarTransacao();
+
 	}
 }

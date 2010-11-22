@@ -1,8 +1,10 @@
 package sgidp.web.componentes;
 
 import java.util.Iterator;
+
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
+
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 
 public class UsuarioDataProvider implements IDataProvider<Usuario> {
@@ -17,13 +19,17 @@ public class UsuarioDataProvider implements IDataProvider<Usuario> {
 		}
 		return usuarioSimpleGrade;
 	}
-	
-	public UsuarioDataProvider() {
-		
-	}
-	
+
 	public UsuarioDataProvider(String tipoFiltro, String parametro) {
-		getUsuarioSimpleGrade().criaLista(tipoFiltro,parametro);
+		getUsuarioSimpleGrade().criaLista(tipoFiltro, parametro);
+	}
+
+	public UsuarioDataProvider() {
+		getUsuarioSimpleGrade().criaLista("", "");
+	}
+
+	public UsuarioDataProvider(Long idUsuario) {
+		getUsuarioSimpleGrade().criaLista(idUsuario);
 	}
 
 	public Iterator<? extends Usuario> iterator(int primeiro, int contador) {

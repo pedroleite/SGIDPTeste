@@ -1,0 +1,34 @@
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+
+<wicket:extend>
+	<form method="post" wicket:id="form">
+	<div class="cabecalho_formulario" style="text-align: right;">
+		<input type="submit" wicket:id="btnSalvar" value="  Salvar  " class="button">
+		<input type="submit" wicket:id="btnVoltar" value="  Voltar  " class="button">	
+	</div>
+	<div class="titulo_formulario">Editar usuário</div>
+	<div id="erro"><span wicket:id="mensagem"></span></div>
+	<table class="tabela">
+		<tr>
+			<td class="quinze">Nome</td>
+			<td class="oitentaecindo"><input class="txt_gd" type="text"
+				wicket:id="nome" name="nome" maxlength="50px" /></td>
+		</tr>
+		<tr>
+			<td class="quinze">Login</td>
+			<td class="oitentaecindo"><input class="txt_md" type="text"
+				wicket:id="login" name="login" maxlength="20" /></td>
+		</tr>
+		<tr>
+			<td class="quinze">Permissões</td>
+			<td>
+			<div style="width: 400px;"><span wicket:id="palette"> </span></div>
+			</td>
+		</tr>
+	</table>
+	</form>
+</wicket:extend>
+</body>
+</html>
