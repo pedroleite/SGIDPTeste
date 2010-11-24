@@ -1,0 +1,41 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+<body class="corpoformulario">
+<wicket:extend>
+
+	<form method="post" wicket:id="form">
+		<div class="cabecalho_formulario">		
+		    Filtro: 
+			<select class="combo_pq" wicket:id="tipoFiltro"  name="tipoFiltro">
+			</select>
+			
+			<input class="txt_md" type="text" wicket:id="filtro" name="filtro"/>
+			
+			<input type="submit" wicket:id="btnLocalizar" value="Localizar" class="button">
+			
+			<div class="cabecalho_botoes">
+				<input type="submit" wicket:id="btnNovoUsuario" value="  Novo usuário  " class="button">
+			</div>
+	
+		</div>
+	</form>	
+	
+	<div class="navigator">
+		<span wicket:id="navigator">[dataview navigator]</span>
+	</div>
+	<table cellspacing="0" class="tabela">
+		<tr>
+			<th></th>
+			<th>Nome</th>
+			<th>Login</th>
+		</tr>
+		<tr class="tabela_tr" wicket:id="listaUsuario">
+			<td class="tabela_d"><span wicket:id="acao">[acao]</span></td>
+			<td class="tabela_d"><span wicket:id="nome">[nome]</span></td>
+			<td class="tabela_d"><span wicket:id="login">[login]</span></td>
+		</tr>
+	</table>
+
+</wicket:extend>
+
+</body>
+</html>

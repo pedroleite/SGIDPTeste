@@ -27,7 +27,7 @@ public class ParlamentarBO {
 	}
 
 	public List<Parlamentar> getPorFiltro(String filtro, String parametro) {
-		return getParlamentarDAO().buscaPorFiltro(filtro,parametro);
+		return getParlamentarDAO().buscaPorFiltro(filtro, parametro);
 	}
 
 	public Parlamentar obterPorId(Long id) {

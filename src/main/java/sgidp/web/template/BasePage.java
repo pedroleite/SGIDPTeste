@@ -109,8 +109,8 @@ public class BasePage extends WebPage {
 		WebMarkupContainer webMarkupContainer = new WebMarkupContainer(
 				"div_manter_funcionario_" + descricaoDiv);
 		webMarkupContainer.add(new BookmarkablePageLink(
-				"manterFuncionarioLink", ListarFuncionarioPage.class).setParameter(
-				"link", "03"));
+				"manterFuncionarioLink", ListarFuncionarioPage.class)
+				.setParameter("link", "03"));
 
 		verificaMarkup("03", descricaoDiv, isTemPermissao, webMarkupContainer);
 

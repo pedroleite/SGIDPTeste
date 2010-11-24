@@ -28,12 +28,7 @@ public class Parlamentar extends Entidade implements Serializable {
 	private String emailParticular;
 	private String site;
 	private String nomeCompleto;
-	
-	
-	
-	
-	
-	
+
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = Endereco.class, fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
 

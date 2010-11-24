@@ -49,9 +49,9 @@ public class UsuarioSimpleGrade implements Serializable {
 
 	public void criaLista(Long idUsuario) {
 		List<Usuario> listaUsuarioEmFoco = new ArrayList<Usuario>();
-		
+
 		UsuarioBO usuarioBO = new UsuarioBO();
-		
+
 		Usuario usuarioEmFoco = usuarioBO.obterPorId(idUsuario);
 		listaUsuarioEmFoco.add(usuarioEmFoco);
 

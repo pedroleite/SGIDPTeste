@@ -33,8 +33,8 @@
 	</tr>
 	<tr>
 		<td>Data Nasc.</td>
-		<td><input size="40" wicket:id="dataNascimento" tabindex="1"
-			title="dataNascimento" /></td>
+		<td><input size="40" wicket:id="dataNascimento" tabindex="1" maxlength="10"
+			title="dataNascimento" onkeydown="maskIt(this,event,'##/##/####')"/></td>
 	</tr>
 	<tr>
 		<td>Cargo</td>
@@ -47,8 +47,9 @@
 	</tr>
 	<tr>
 		<td>Estado</td>
-		<td><input size="10" wicket:id="estado" tabindex="1"
-			title="estado" /></td>
+		<td><select
+		class="combo_pq" wicket:id="estado" name="parlamentar.estado">
+	</select></td>
 	</tr>
 	<tr>
 		<td>Profissão</td>

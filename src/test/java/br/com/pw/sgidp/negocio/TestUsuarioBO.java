@@ -12,14 +12,12 @@ public class TestUsuarioBO {
 		usuario.setNome("Welington Antonio Gomides");
 		usuario.setLogin("welington");
 		usuario.setSenha("123");
-		
-		
-		
+
 		UsuarioBO usuarioBO = new UsuarioBO();
-		
+
 		usuarioBO.inserir(usuario);
-		
+
 		usuarioBO.obterPorId(new Long(1));
-		
+
 	}
 }

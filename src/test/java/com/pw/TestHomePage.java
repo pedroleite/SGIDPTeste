@@ -1,34 +1,28 @@
 package com.pw;
 
 import junit.framework.TestCase;
+
 import org.apache.wicket.util.tester.WicketTester;
-
-import com.pw.HomePage;
-import com.pw.WicketApplication;
-
 
 /**
  * Simple test using the WicketTester
  */
-public class TestHomePage extends TestCase
-{
+public class TestHomePage extends TestCase {
 	private WicketTester tester;
 
 	@Override
-	public void setUp()
-	{
+	public void setUp() {
 		tester = new WicketTester(new WicketApplication());
 	}
 
-	public void testRenderMyPage()
-	{
-		//start and render the test page
+	public void testRenderMyPage() {
+		// start and render the test page
 		tester.startPage(HomePage.class);
 
-		//assert rendered page class
+		// assert rendered page class
 		tester.assertRenderedPage(HomePage.class);
 
-		//assert rendered label component
+		// assert rendered label component
 		tester.assertLabel("message", "Funcionou mlk...");
 	}
 }
