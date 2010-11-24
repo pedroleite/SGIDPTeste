@@ -3,7 +3,6 @@ package br.com.pw.sgidp.negocio;
 import java.util.List;
 
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
-import br.com.pw.sgidp.negocio.entidade.Usuario;
 import br.com.pw.sgidp.persitencia.dao.ParlamentarDAO;
 
 public class ParlamentarBO {

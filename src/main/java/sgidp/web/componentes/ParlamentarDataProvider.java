@@ -1,14 +1,13 @@
 package sgidp.web.componentes;
 
 import java.util.Iterator;
-
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
-
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 
+@SuppressWarnings("serial")
 public class ParlamentarDataProvider implements IDataProvider<Parlamentar> {
 
 	private ParlamentarSimpleGrade parlamentarSimpleGrade;
