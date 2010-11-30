@@ -49,6 +49,17 @@ public class MockCarregarUsuarioEPermissoes {
 
 		permissaoBO.incluir(permissao1);
 		permissaoBO.incluir(permissao2);
+
+		Permissao permissao3 = new Permissao();
+		permissao3.setCodigo("10");
+		permissao3.setDescricao("Tabelas de apoio");
+		permissaoBO.incluir(permissao3);
+		
+		Permissao permissao4 = new Permissao();
+		permissao4.setCodigo("03");
+		permissao4.setDescricao("Cadastrar Funcionário");
+		permissaoBO.incluir(permissao4);
+		
 		return permissaoBO.getListaTodasPermissoes();
 	}
 }

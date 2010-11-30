@@ -1,3 +1,4 @@
+
 package br.com.pw.sgidp.negocio.entidade;
 
 import java.io.Serializable;
@@ -122,3 +123,4 @@ public class Funcionario extends Entidade implements Serializable {
 	}
 
 }
+
