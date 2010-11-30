@@ -92,7 +92,7 @@ public class ListarParlamentarPage extends BasePage {
 		DataView<Parlamentar> dataView = new DataView<Parlamentar>("listaParlamentar",
 				parlamentarProvider) {
 			@Override
-			protected void populateItem(final Item<Parlamentar> item) {
+	        protected void populateItem(final Item<Parlamentar> item) {
 
 				Parlamentar parlamentar = item.getModelObject();
 				
@@ -121,10 +121,10 @@ public class ListarParlamentarPage extends BasePage {
 				@Override
 				public void onClick() {
 
-					EditarUsuarioPage editarUsuario = new EditarUsuarioPage(
-							((Usuario) getParent().getDefaultModelObject())
+					EditarParlamentarPage editarParlamentar = new EditarParlamentarPage(
+							((Parlamentar) getParent().getDefaultModelObject())
 									.getId());
-					setResponsePage(editarUsuario);
+					setResponsePage(editarParlamentar);
 				}
 			});
 
@@ -132,10 +132,10 @@ public class ListarParlamentarPage extends BasePage {
 				@Override
 				public void onClick() {
 
-					VisualizarUsuarioPage visualizarUsuario = new VisualizarUsuarioPage(
-							((Usuario) getParent().getDefaultModelObject())
+					VisualizarParlamentarPage visualizarParlamentar = new VisualizarParlamentarPage(
+							((Parlamentar) getParent().getDefaultModelObject())
 									.getId());
-					setResponsePage(visualizarUsuario);
+					setResponsePage(visualizarParlamentar);
 
 				}
 			});

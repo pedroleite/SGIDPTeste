@@ -33,4 +33,11 @@ public class ParlamentarBO {
 	public Parlamentar obterPorId(Long id) {
 		return getParlamentarDAO().obterPorId(id);
 	}
+
+	public void editar(Parlamentar parlamentar) {
+		getParlamentarDAO().iniciarTransacao();
+		getParlamentarDAO().atualizar(parlamentar);
+		getParlamentarDAO().finalizarTransacao();
+		
+	}
 }

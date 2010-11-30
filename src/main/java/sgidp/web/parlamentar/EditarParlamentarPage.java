@@ -3,7 +3,6 @@ package sgidp.web.parlamentar;
 import java.util.Arrays;
 import java.util.Date;
 
-import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -12,19 +11,21 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.validation.validator.EmailAddressPatternValidator;
 
-import sgidp.web.template.BasePage;
 import br.com.pw.sgidp.negocio.ParlamentarBO;
 import br.com.pw.sgidp.negocio.UtilData;
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 
-public class IncluirParlamentarPage extends BasePage {
+import sgidp.web.template.BasePage;
 
-	final long serialVersionUID = 1L;
-	Parlamentar parlamentar = new Parlamentar();
+public class EditarParlamentarPage extends BasePage{
+	
+	private Parlamentar parlamentar;
 
-	@SuppressWarnings( { "serial", "unchecked" })
-	public IncluirParlamentarPage(final PageParameters parameters) {
-		super(parameters, "Parlamentar", "Cadastrar parlamentar");
+	public EditarParlamentarPage(Long idParlamentar) {
+		super("Parlamentar", "Editar parlamentar");
+		
+		parlamentar = new ParlamentarBO().obterPorId(idParlamentar);
+
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 		form.add(new FeedbackPanel("mensagem"));
@@ -91,7 +92,7 @@ public class IncluirParlamentarPage extends BasePage {
 				ParlamentarBO parlamentarBO = new ParlamentarBO();
 				if (UtilData.isDataValido(parlamentar.getDataNascimento())) {
 
-					parlamentarBO.salvar(parlamentar);
+					parlamentarBO.editar(parlamentar);
 					ListarParlamentarPage listarParlamentar = new ListarParlamentarPage(
 							parlamentar.getId());
 					setResponsePage(listarParlamentar);
@@ -111,4 +112,5 @@ public class IncluirParlamentarPage extends BasePage {
 		btnVoltar.setDefaultFormProcessing(false);
 		form.add(btnVoltar);
 	}
+			
 }
