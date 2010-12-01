@@ -14,8 +14,9 @@ public class ParlamentarDAO extends DAOAbstrato<Parlamentar> {
 	}
 
 	public void atualizar(Parlamentar entidade) {
-		getSession().persist(entidade);
+		getSession().persist(getSession().merge(entidade));
 	}
+	
 
 	public List<Parlamentar> consultarTodos() {
 		Query query = getSession().createQuery("from Parlamentar parlamentar");
@@ -23,7 +24,7 @@ public class ParlamentarDAO extends DAOAbstrato<Parlamentar> {
 	}
 
 	public void excluir(Parlamentar entidade) {
-		getSession().remove(entidade);
+		getSession().remove(getSession().merge(entidade));
 	}
 
 	public Parlamentar obterPorId(Long id) {

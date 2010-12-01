@@ -20,6 +20,7 @@ import br.com.pw.sgidp.negocio.entidade.Permissao;
 import br.com.pw.sgidp.negocio.entidade.Usuario;
 
 public class EditarUsuarioPage extends BasePage {
+	
 	private Usuario usuario;
 
 	@SuppressWarnings("serial")
@@ -62,7 +63,6 @@ public class EditarUsuarioPage extends BasePage {
 		form.add(new Button("btnSalvar") {
 			@Override
 			public void onSubmit() {
-				// Verifica se o login já foi cadastrado
 				UsuarioBO usuarioBO = new UsuarioBO();
 
 				usuario.setLogin(usuario.getLogin().toLowerCase());

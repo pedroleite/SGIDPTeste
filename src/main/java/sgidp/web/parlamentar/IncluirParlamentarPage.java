@@ -109,8 +109,6 @@ public class IncluirParlamentarPage extends BasePage {
 		};
 
 		btnVoltar.setDefaultFormProcessing(false);
-
 		form.add(btnVoltar);
-
 	}
 }

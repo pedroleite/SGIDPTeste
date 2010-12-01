@@ -3,7 +3,6 @@ package sgidp.web.parlamentar;
 import java.util.Arrays;
 import java.util.Date;
 
-import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -13,16 +12,19 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.validation.validator.EmailAddressPatternValidator;
 
 import sgidp.web.template.BasePage;
-import sgidp.web.usuario.ListarUsuarioPage;
 import br.com.pw.sgidp.negocio.ParlamentarBO;
+import br.com.pw.sgidp.negocio.UtilData;
 import br.com.pw.sgidp.negocio.entidade.Parlamentar;
 
 public class EditarParlamentarPage extends BasePage {
+
 	private Parlamentar parlamentar;
 
-	@SuppressWarnings( { "serial", "unchecked" })
-	public EditarParlamentarPage(final PageParameters parameters) {
-		super(parameters, "Parlamentar", "Cadastrar parlamentar");
+	public EditarParlamentarPage(Long idParlamentar) {
+		super("Parlamentar", "Editar parlamentar");
+
+		parlamentar = new ParlamentarBO().obterPorId(idParlamentar);
+
 		Form<Object> form = new Form<Object>("form");
 		add(form);
 		form.add(new FeedbackPanel("mensagem"));
@@ -86,32 +88,24 @@ public class EditarParlamentarPage extends BasePage {
 		form.add(new Button("btnSalvar") {
 			@Override
 			public void onSubmit() {
-				// Verifica se o login já foi cadastrado
+
 				ParlamentarBO parlamentarBO = new ParlamentarBO();
+				if (UtilData.isDataValido(parlamentar.getDataNascimento())) {
 
-				// usuario.setLogin(usuario.getLogin().toLowerCase());
-				//
-				// if (!parlamentarBO.isLoginCadastrado(parlamentar)) {
-				// @SuppressWarnings("unchecked")
-				// ListModel<Permissao> modelPermissao = (ListModel<Permissao>)
-				// palette
-				// .getDefaultModel();
-				// usuario.setListaPermissao(modelPermissao.getObject());
-				// usuarioBO.atualizar(usuario);
-				//
-				// setResponsePage(new ListarUsuarioPage(usuario.getId()));
-				// } else {
-				// error("Login já cadastrado.");
-				// }
-
+					parlamentarBO.editar(parlamentar);
+					ListarParlamentarPage listarParlamentar = new ListarParlamentarPage(
+							parlamentar.getId());
+					setResponsePage(listarParlamentar);
+				} else {
+					error("Data de Nascimento invalida");
+				}
 			}
-
 		});
-
 		Button btnVoltar = new Button("btnVoltar") {
 			@Override
 			public void onSubmit() {
-				setResponsePage(ListarUsuarioPage.class);
+				setResponsePage(ListarParlamentarPage.class);
+
 			}
 		};
 
